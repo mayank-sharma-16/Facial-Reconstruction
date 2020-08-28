@@ -121,12 +121,16 @@ if __name__ == "__main__":
         # Converts current frame to greyscale.
         grey_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-        # Introduce Artificial Errors.
+        # Introduce artificial errors.
         broken_grey_frame = MakeErrors(grey_frame, 0)
+
+        # Resize the frame to match the model dimensions.
+        small_bgf = cv2.resize(broken_grey_frame, (64, 64))
+        fixed_frame = cv2.resize(RBM.get_RBM(small_bgf), (256, 256))
 
         # Update all windows.
         cv2.imshow("Input Face", grey_frame)
-        cv2.imshow("Reconstructed Face", broken_grey_frame)
+        cv2.imshow("Reconstructed Face", fixed_frame)
 
         # Gets next frame.
         rval, frame = input_capture.read()

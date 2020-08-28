@@ -6,7 +6,7 @@ import numpy as np
 def get_RBM(frame):
 
     # load the best basic RBM model
-    rbm = pickle.load(open('RBM_model0.sav', 'rb'))
+    rbm = pickle.load(open('models/RBMs/RBM_model7.sav', 'rb'))
 
     # resize for calculations
     frame2 = np.reshape(frame, 4096)
