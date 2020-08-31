@@ -1,7 +1,7 @@
 # Facial-Reconstruction
 Using Deep RBMs to demo repair of corrupted facial imagery.
 
-This project uses inspiration from an applied research paper to use various Restricted Boltzmann Machine architectures for realtime reconstruction of facial images and was initally used as a project for a class. 
+This project uses inspiration from an applied research paper to use various Restricted Boltzmann Machine architectures for realtime reconstruction of facial images.
 
 Things coming up:
 - Links to both my writeup regarding my results and the original paper
