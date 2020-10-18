@@ -1,2 +1,5 @@
 lfwcrop_grey/
 notebooks/lfwcrop_grey/
+test.py
+mank_portrait.png
+haarcascade_frontalface_default.xml
