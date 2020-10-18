@@ -53,7 +53,7 @@ def OverlayFrame(top_frame: np.ndarray, broken_frame: np.ndarray, pattern_number
     broken_frame = np.copy(broken_frame)
 
     if pattern_number == 0:
-        return __replacePixels(range(20), range(len(broken_frame)), broken_frame, top_frame, vertical=50)
+        broken_frame = __replacePixels(range(20), range(len(broken_frame)), broken_frame, top_frame, vertical=50)
     if pattern_number == 1:
         for i in range(30):
             for j in range(30):
@@ -72,6 +72,8 @@ def __replacePixels(i_range, j_range, under, over, horizontal=0, vertical=0):
     else:
         for i in i_range:
             for j in j_range:
-                under[i + vertical][j + horizontal] = over[i][j]
+                print(f"changing {type(under[i+vertical][j+horizontal])} to {type(over[i + vertical][j + horizontal])} into", end="")
+                under[i + vertical][j + horizontal] = int(over[i+vertical][j+horizontal]*254)
+                print(f"{under[i+vertical][j+horizontal]}")
 
     return under
